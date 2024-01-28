@@ -1,0 +1,105 @@
+{
+ "version": "auto-py-to-exe-configuration_v1",
+ "pyinstallerOptions": [
+  {
+   "optionDest": "noconfirm",
+   "value": true
+  },
+  {
+   "optionDest": "filenames",
+   "value": "D:/Code/Applications/PasswordManager/main.py"
+  },
+  {
+   "optionDest": "onefile",
+   "value": true
+  },
+  {
+   "optionDest": "console",
+   "value": false
+  },
+  {
+   "optionDest": "icon_file",
+   "value": "D:/Code/Applications/PasswordManager/cat.ico"
+  },
+  {
+   "optionDest": "ascii",
+   "value": false
+  },
+  {
+   "optionDest": "clean_build",
+   "value": false
+  },
+  {
+   "optionDest": "strip",
+   "value": false
+  },
+  {
+   "optionDest": "noupx",
+   "value": false
+  },
+  {
+   "optionDest": "disable_windowed_traceback",
+   "value": false
+  },
+  {
+   "optionDest": "embed_manifest",
+   "value": true
+  },
+  {
+   "optionDest": "uac_admin",
+   "value": false
+  },
+  {
+   "optionDest": "uac_uiaccess",
+   "value": false
+  },
+  {
+   "optionDest": "win_private_assemblies",
+   "value": false
+  },
+  {
+   "optionDest": "win_no_prefer_redirects",
+   "value": false
+  },
+  {
+   "optionDest": "bootloader_ignore_signals",
+   "value": false
+  },
+  {
+   "optionDest": "argv_emulation",
+   "value": false
+  },
+  {
+   "optionDest": "datas",
+   "value": "D:/Code/Applications/PasswordManager/copy_to_clipboard.ico;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Python312/Lib/site-packages/mysql;mysql/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Python312/Lib/site-packages/pyperclip;pyperclip/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Python312/Lib/site-packages/uuid-1.30.dist-info;uuid-1.30.dist-info/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Users/Cody/AppData/Local/Programs/Python/Python311/Lib/site-packages/customtkinter;customtkinter/"
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Python312/Lib/uuid.py;."
+  },
+  {
+   "optionDest": "datas",
+   "value": "C:/Python312/Lib/site-packages/uuid.py;."
+  }
+ ],
+ "nonPyinstallerOptions": {
+  "increaseRecursionLimit": true,
+  "manualArguments": ""
+ }
+}
