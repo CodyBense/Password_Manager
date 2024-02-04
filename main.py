@@ -151,7 +151,7 @@ class App(customtkinter.CTk):
         self.geometry(f"{1100}x{580}")
         self.title("Password Manager")
         self.minsize(300, 200)
-        self.iconbitmap("/home/codybense/Code/Applications/Password_Manager/Icons/cat.ico")
+        self.iconbitmap("~/Code/Projects/PasswordManager/Icons/cat.ico")
 
         # create 2x2 gird system
         self.grid_rowconfigure(0, weight=1)
@@ -171,7 +171,7 @@ class App(customtkinter.CTk):
 
         # photo image
         self.piCopyToClipbpard = customtkinter.CTkImage(
-            Image.open("/home/codybense/Code/Applications/Password_Manager/Icons/copy_to_clipboard.ico")
+            Image.open("C:/Users/Cody/Code/Projects/PasswordManager/Icons/copy_to_clipboard.ico")
         )
 
         # labels
