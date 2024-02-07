@@ -128,7 +128,7 @@ class PM:
 #
 #     def actEditPassword(self):
 #         dgWebsite = customtkinter.CTkInputDialog(
-#                 text="Enter website:", title="Edit Password"
+#                 tex="Enter website:", title="Edit Password"
 #                 )
 #         website = dgWebsite.get_input()
 #
@@ -151,7 +151,10 @@ class App(customtkinter.CTk):
         self.geometry(f"{1100}x{580}")
         self.title("Password Manager")
         self.minsize(300, 200)
-        self.iconbitmap("/home/codybense/Code/Applications/Password_Manager/Icons/cat.ico")
+        # self.iconbitmap("/home/codybense/Code/Applications/Password_Manager/Icons/cat.svg")
+        # self.ico = Image.open("/home/Code/Applications/Password_Manager/Icons/cat.svg")
+        # self.photo = ImageTk.PhotoImage(self.ico)
+        # self.wm_iconphoto(True, self.photo)
 
         # create 2x2 gird system
         self.grid_rowconfigure(0, weight=1)
@@ -159,7 +162,13 @@ class App(customtkinter.CTk):
 
         # creates left frame and widgets
         self.frLeft = customtkinter.CTkFrame(master=self)
-        self.frLeft.grid(row=0, column=0, rowspan=2, columnspan=1, sticky="nsew")
+        self.frLeft.grid(
+            row=0,
+            column=0,
+            rowspan=2,
+            columnspan=1,
+            sticky="nsew"
+        )
 
         # textbox
         self.savedLogins = customtkinter.CTkTextbox(master=self.frLeft)
@@ -167,18 +176,30 @@ class App(customtkinter.CTk):
 
         # create right frame and widgets
         self.frRight = customtkinter.CTkFrame(master=self)
-        self.frRight.grid(row=0, column=1, rowspan=2, columnspan=1, sticky="nsew")
+        self.frRight.grid(
+            row=0,
+            column=1,
+            rowspan=2,
+            columnspan=1,
+            sticky="nsew"
+        )
 
         # photo image
         self.piCopyToClipbpard = customtkinter.CTkImage(
-            Image.open("/home/codybense/Code/Applications/Password_Manager/Icons/copy_to_clipboard.ico")
+            Image.open(r"/home/codybense/Code/Applications/Password_Manager/Icons/copy_to_clipboard.png")
         )
 
         # labels
-        self.lbUsername = customtkinter.CTkLabel(master=self.frRight, text="Username")
+        self.lbUsername = customtkinter.CTkLabel(
+            master=self.frRight,
+            text="Username"
+        )
         self.lbUsername.place(x=50, y=100)
 
-        self.lbPassword = customtkinter.CTkLabel(master=self.frRight, text="Password")
+        self.lbPassword = customtkinter.CTkLabel(
+            master=self.frRight,
+            text="Password"
+        )
         self.lbPassword.place(x=50, y=150)
 
         # entry
@@ -243,8 +264,9 @@ class App(customtkinter.CTk):
         username = dgUsername.get_input()
 
         dgPassword = customtkinter.CTkInputDialog(
-                text="Enter Password (Leave empty to generate a password):", title="Create Password"
-                )
+            text="Enter Password (Leave empty to generate a password):",
+            title="Create Password"
+        )
         password = dgPassword.get_input()
 
         if password == '':
@@ -290,8 +312,9 @@ class App(customtkinter.CTk):
             self.pm.editUsername(website, username)
         elif choice == "p":
             dgPassword = customtkinter.CTkInputDialog(
-                    text="Enter Password (Leave empty to generate a password):", title="Edit"
-                    )
+                text="Enter Password (Leave empty to generate a password):",
+                title="Edit"
+            )
             password = dgPassword.get_input()
 
             if password == '':
