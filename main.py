@@ -186,7 +186,8 @@ class App(customtkinter.CTk):
 
         # photo image
         self.piCopyToClipbpard = customtkinter.CTkImage(
-            Image.open(r"/home/codybense/Code/Applications/Password_Manager/Icons/copy_to_clipboard.png")
+            Image.open(r"/home/codybense/Code/Applications/Password_Manager/Icons/copy.png"),
+            # size=(10, 10)
         )
 
         # labels
