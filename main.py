@@ -1,23 +1,28 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-import MySQLdb
+from sqlalchemy import create_engine
+from dotenv import load_dotenv
+import os
 
 def setup_page():
     st.title('Password Manager')
+    st.checkbox('Show Passwords')
 
 def fetch_data():
     try:
-        mysql_cn = MySQLdb.connect(host='192.168.1.129',
-                                   port=3306,
-                                   user="root",
-                                   passwd="ZSe45rdx##",
-                                   db="Logins"
-                                   )
+        load_dotenv()
+        user = os.getenv("DB_USER")
+        password = os.getenv("DB_PASSWORD")
+        host = os.getenv("DB_HOST")
+        port = os.getenv("DB_PORT")
+        db = os.getenv("DB_NAME")
+
+        engine = create_engine(f"mysql+mysqldb://{user}:{password}@{host}:{port}/{db}")
+
         query = "SELECT * FROM login_info;"
-        df = pd.read_sql(query, mysql_cn)
-        mysql_cn.close()
-        print(df.head)
+        df = pd.read_sql(query, engine)
+        st.write(df)
     except Exception as e:
         print(f'failed fetching data: {e}')
 
