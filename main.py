@@ -6,11 +6,14 @@ from dotenv import load_dotenv
 import os
 
 def setup_page():
+    """ Sets up the streamlit page. """
     st.title('Password Manager')
     st.checkbox('Show Passwords')
 
 def fetch_data():
+    """ Accesses the data from the sql database. """
     try:
+        #Gets the info from the .env file.
         load_dotenv()
         user = os.getenv("DB_USER")
         password = os.getenv("DB_PASSWORD")
@@ -18,8 +21,10 @@ def fetch_data():
         port = os.getenv("DB_PORT")
         db = os.getenv("DB_NAME")
 
+        # Connects to the database.
         engine = create_engine(f"mysql+mysqldb://{user}:{password}@{host}:{port}/{db}")
 
+        # Queries the database for all the login infor and prints it to the page.
         query = "SELECT * FROM login_info;"
         df = pd.read_sql(query, engine)
         st.write(df)
