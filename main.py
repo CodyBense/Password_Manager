@@ -5,10 +5,10 @@ from sqlalchemy import create_engine
 from dotenv import load_dotenv
 import os
 
+
 def setup_page():
     """ Sets up the streamlit page. """
-    st.title('Password Manager')
-    st.checkbox('Show Passwords')
+    st.title('The Vault')
 
 def fetch_data():
     """ Accesses the data from the sql database. """
@@ -27,13 +27,17 @@ def fetch_data():
         # Queries the database for all the login infor and prints it to the page.
         query = "SELECT * FROM login_info;"
         df = pd.read_sql(query, engine)
-        st.write(df)
     except Exception as e:
         print(f'failed fetching data: {e}')
+    return df
+
 
 def main():
     setup_page()
-    fetch_data()
+    df = fetch_data()
+
+    st.dataframe(df, use_container_width=True, hide_index=True)
+
 
 if __name__ == "__main__":
     main()
