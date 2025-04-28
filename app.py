@@ -14,7 +14,9 @@ import os
 def setup_page():
     """ Sets up the streamlit page. """
     st.title('The Vault')
-    st.button('Add login')
+    # st.button('Add login')
+    add_login_page = st.Page("pages/add_login.py", title="Add Login")
+    pg = st.navigation([st.Page("homepage.py"), add_login_page])
 
 def fetch_data():
     """ Accesses the data from the sql database. """
@@ -40,9 +42,9 @@ def fetch_data():
 
 def main():
     setup_page()
-    df = fetch_data()
-
-    st.dataframe(df, use_container_width=True, hide_index=True)
+    # df = fetch_data()
+    #
+    # st.dataframe(df, use_container_width=True, hide_index=True)
 
 
 if __name__ == "__main__":
