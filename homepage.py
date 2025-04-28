@@ -1,3 +1,8 @@
+"""
+    TODO:
+        * Figure out how I want to handle masking passwords till needed
+        * Make a second page for adding logins
+"""
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -9,6 +14,7 @@ import os
 def setup_page():
     """ Sets up the streamlit page. """
     st.title('The Vault')
+    st.button('Add login')
 
 def fetch_data():
     """ Accesses the data from the sql database. """
