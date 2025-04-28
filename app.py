@@ -13,7 +13,7 @@ import os
 
 def setup_page():
     """ Sets up the streamlit page. """
-    the_vault = st.Page("pages/homepage.py", title="The Vault")
+    the_vault = st.Page("pages/the_vault.py", title="The Vault")
     add_login_page = st.Page("pages/add_login.py", title="Add Login")
     pg = st.navigation([the_vault, add_login_page])
     pg.run()
