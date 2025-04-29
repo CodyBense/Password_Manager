@@ -16,7 +16,7 @@ class Login(Base):
     email = Column(String(255))
     password = Column(String(255))
 
-def add_login(website_tb, username_tb, password_tb):
+def add_login(website_ti, username_ti, password_ti):
     try:
         #Gets the info from the .env file.
         load_dotenv()
@@ -32,19 +32,19 @@ def add_login(website_tb, username_tb, password_tb):
         session = Session()
 
         # Queries the database to add the login info.
-        new_login = Login(website=website_tb, email=username_tb, password=password_tb)
+        new_login = Login(website=website_ti, email=username_ti, password=password_ti)
         session.add(new_login)
         session.commit()
-        query = f"INSERT INTO login_info (website, email, password) VALUES ('{website}', '{username}', '{password}'); "
     except Exception as e:
         print(f'failed adding data: {e}')
 
 def main():
     st.title("Add login")
-    website_tb = st.text_input("Website")
-    username_tb = st.text_input("Username")
-    password_tb = st.text_input("Password")
-    if st.button("Add Login...", on_click=add_login, args=(website_tb,username_tb,password_tb)):
+    st.write("Enter the login info you want ot add!")
+    website_ti = st.text_input("Website")
+    username_ti = st.text_input("Username")
+    password_ti = st.text_input("Password")
+    if st.button("Add Login...", on_click=add_login, args=(website_ti,username_ti,password_ti)):
         st.write("Adding login!")
 
 if __name__ == "__main__":
