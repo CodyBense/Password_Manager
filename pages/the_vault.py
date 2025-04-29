@@ -31,7 +31,7 @@ def fetch_data():
 def main():
     st.title('The Vault')
     df = fetch_data()
-    st.dataframe(df, use_container_width=True, hide_index=True)
+    st.dataframe(df, use_container_width=True, hide_index=True, column_config={"id": None})
 
 
 if __name__ == "__main__":
