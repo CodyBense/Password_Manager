@@ -4,7 +4,10 @@ import numpy as np
 
 def main():
     st.title("Add login")
-    st.button("Test")
+    website = st.text_input("Website")
+    username = st.text_input("Username")
+    password = st.text_input("Password")
+    st.button("Add Login...")
 
 if __name__ == "__main__":
     main()
