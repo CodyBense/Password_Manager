@@ -1,10 +1,4 @@
-"""
-    TODO:
-        * fix insert query
-"""
 import streamlit as st
-import pandas as pd
-import numpy as np
 from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
