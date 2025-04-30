@@ -1,3 +1,7 @@
+'''
+    TODO:
+        * follow sqlalchemy documentation to do insert statement
+'''
 import streamlit as st
 from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String
